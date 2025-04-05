@@ -149,72 +149,73 @@
       <input type="tel" id="telefone" name="telefone" required placeholder="xxxxxxxxxxx" pattern="^[0-9]{11}$" style="width: 100%; padding: 10px; margin: 10px 0;">
 
 
-      <label for="especializacao">Área</label>
-      <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
-        <option value="">Selecione a especialização</option>
-        <option value="pintor">Artista Plástico</option>
-        <option value="escritor">Escritor</option>
-        <option value="dancarino">Dançarino</option>
-        <option value="circense">Circense</option>
-        <option value="musico">Músico</option>
-        <option value="malabarista">Malabarista</option>
-        <option value="outros">Outros</option>
-      </select>
-      <label for="plano">Selecione seu Plano:</label>
-      <select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
-          <option value="plano1">Assinatura mensal R$ 29 por mês </option>
-          <option value="plano3">Anuidade R$ 119,88 (1 Ano) </option>
-      </select>
-
+      <form id="formInscricao">
+        <label for="especializacao">Área:</label>
+        <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Selecione a especialização</option>
+          <option value="pintor">Artista Plástico</option>
+          <option value="escritor">Escritor</option>
+          <option value="dancarino">Dançarino</option>
+          <option value="circense">Circense</option>
+          <option value="musico">Músico</option>
+          <option value="malabarista">Malabarista</option>
+          <option value="outros">Outros</option>
+        </select>
       
-
-      <button class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">Enviar</button>
-
-  </form>
-
-  <script>
-    document.getElementById('formInscricao').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
-
-        const formData = new FormData(this);
-
-        fetch('https://formspree.io/f/xovjqpwg', {
+        <label for="plano">Selecione seu Plano:</label>
+        <select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Escolha um plano</option>
+          <option value="plano1">Assinatura mensal - R$ 29 por mês</option>
+          <option value="plano3">Anuidade - R$ 119,88 (1 Ano)</option>
+        </select>
+      
+        <button type="submit" class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+          Enviar
+        </button>
+      </form>
+      
+      <script>
+        document.getElementById('formInscricao').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const formData = new FormData(this);
+      
+          fetch('https://formspree.io/f/xovjqpwg', {
             method: 'POST',
             body: formData,
             headers: {
-                Accept: 'application/json',
+              Accept: 'application/json',
             },
-        })
-        .then(response => {
+          })
+          .then(response => {
             if (response.ok) {
-                const planoSelecionado = document.getElementById('plano').value;
-                
-                let linkPagamento = '';
-
-                if (planoSelecionado === 'plano1') {
-                    // 💳 Link novo: plano 1
-                    linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
-                } else if (planoSelecionado === 'plano3') {
-                    // 💳 Link novo: plano 3
-                    linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
-                }
-
-                if (linkPagamento) {
-                    alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
-                    window.location.href = linkPagamento;
-                } else {
-                    alert('Erro ao selecionar o plano. Por favor, tente novamente.');
-                }
+              const planoSelecionado = document.getElementById('plano').value;
+      
+              let linkPagamento = '';
+      
+              if (planoSelecionado === 'plano1') {
+                linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
+              } else if (planoSelecionado === 'plano3') {
+                linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
+              }
+      
+              if (linkPagamento) {
+                alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
+                window.location.href = linkPagamento;
+              } else {
+                alert('Erro ao selecionar o plano. Por favor, tente novamente.');
+              }
             } else {
-                alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+              alert('Erro ao enviar o formulário. Por favor, tente novamente.');
             }
-        })
-        .catch(error => {
+          })
+          .catch(error => {
             console.error('Erro:', error);
             alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          });
         });
-    });
-</script>
+      </script>
+      
 
 </section>
 
