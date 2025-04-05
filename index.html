@@ -176,34 +176,31 @@
     document.getElementById('formInscricao').addEventListener('submit', function(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Coleta os dados do formulário
         const formData = new FormData(this);
 
-        // Envia os dados para o FormSpree
         fetch('https://formspree.io/f/xovjqpwg', {
             method: 'POST',
             body: formData,
             headers: {
-                Accept: 'application/json', // Cabeçalho padrão para JSON
+                Accept: 'application/json',
             },
         })
         .then(response => {
             if (response.ok) {
-                // Captura o plano selecionado
                 const planoSelecionado = document.getElementById('plano').value;
                 
                 let linkPagamento = '';
 
-                // Define o link de pagamento com base no plano
                 if (planoSelecionado === 'plano1') {
-                    linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc'; // Link para o primeiro plano
+                    // 💳 Link novo: plano 1
+                    linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
                 } else if (planoSelecionado === 'plano3') {
-                    linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119,88'; // Link para o terceiro plano
+                    // 💳 Link novo: plano 3
+                    linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119,88';
                 }
 
                 if (linkPagamento) {
                     alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
-                    // Redireciona para o link de pagamento do plano escolhido
                     window.location.href = linkPagamento;
                 } else {
                     alert('Erro ao selecionar o plano. Por favor, tente novamente.');
@@ -217,7 +214,8 @@
             alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
         });
     });
-  </script>
+</script>
+
 </section>
 
 
