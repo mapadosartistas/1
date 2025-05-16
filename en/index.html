@@ -32,24 +32,24 @@
 <!-- Dropdown de idiomas -->
 <div class="language-dropdown">
   <button id="languageBtn" aria-haspopup="true" aria-expanded="false">
-    <img src="https://flagcdn.com/w20/br.png" alt="Português">
+    <img id="selected-flag" src="https://flagcdn.com/w20/br.png" alt="Selected Language">
     <i class="fas fa-chevron-down"></i>
   </button>
 
   <ul class="language-dropdown-menu" aria-label="Escolher idioma">
-    <li onclick="changeLanguage('/1/pt-pt/index.html')">
+    <li data-path="/pt-pt/index.html" data-flag="https://flagcdn.com/w20/br.png">
       <img src="https://flagcdn.com/w20/br.png" alt="Português">
       <span>Português</span>
     </li>
-    <li onclick="changeLanguage('/1/en/index.html')">
+    <li data-path="/en/index.html" data-flag="https://flagcdn.com/w20/gb.png">
       <img src="https://flagcdn.com/w20/gb.png" alt="English">
       <span>English</span>
     </li>
-    <li onclick="changeLanguage('/1/fr/index.html')">
+    <li data-path="/fr/index.html" data-flag="https://flagcdn.com/w20/fr.png">
       <img src="https://flagcdn.com/w20/fr.png" alt="Français">
       <span>Français</span>
     </li>
-    <li onclick="changeLanguage('/1/de/index.html')">
+    <li data-path="/de/index.html" data-flag="https://flagcdn.com/w20/de.png">
       <img src="https://flagcdn.com/w20/de.png" alt="Deutsch">
       <span>Deutsch</span>
     </li>
@@ -274,6 +274,16 @@
 
 
 
+<script>
+  document.querySelectorAll('.language-dropdown-menu li').forEach(item => {
+    item.addEventListener('click', () => {
+      const path = item.getAttribute('data-path');
+      if (path) {
+        window.location.href = path;
+      }
+    });
+  });
+</script>
 
 
 
