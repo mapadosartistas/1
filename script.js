@@ -96,7 +96,7 @@ if (languageBtn && languageMenu && selectedFlag) {
       const path = item.getAttribute('data-path');
       const flag = item.getAttribute('data-flag');
       if (flag) selectedFlag.src = flag;
-      if (path) window.location.href = path;
+      if (path) window.location.href = window.location.origin + path;
     });
   });
 }
