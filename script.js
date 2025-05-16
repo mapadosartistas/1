@@ -92,11 +92,14 @@ if (languageBtn && languageMenu && selectedFlag) {
 
   // Trocar idioma ao clicar em uma opção
   document.querySelectorAll('.language-dropdown-menu li').forEach(item => {
-    item.addEventListener('click', () => {
-      const path = item.getAttribute('data-path');
-      const flag = item.getAttribute('data-flag');
-      if (flag) selectedFlag.src = flag;
-      if (path) window.location.href = window.location.origin + path;
-    });
+  item.addEventListener('click', () => {
+    const path = item.getAttribute('data-path');
+    const flag = item.getAttribute('data-flag');
+    const base = "/1"; // esse é o diretório base publicado no GitHub Pages
+
+    if (flag) selectedFlag.src = flag;
+    if (path) window.location.href = base + path;
   });
+});
+
 }
