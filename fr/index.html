@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa dos Artistas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Link para o CSS do Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Link para o JavaScript do Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+ <header>
+  <a href="#" class="brand">Carte des Artistes</a>
+<div class="menu-btn"></div>
+
+<div class="navigation">
+  <div class="navigation-items">
+    <a href="#home">Accueil</a>  
+    <a href="#sobre">À propos</a>  
+    <a href="#faca-parte">Participez</a>  
+    <a href="Area de login/index.html">Connexion</a>
+ 
+    </div>   
+  </div>
+<!-- Dropdown de idiomas -->
+<div class="language-dropdown">
+  <button id="languageBtn" aria-haspopup="true" aria-expanded="false">
+    <img id="selected-flag" src="https://flagcdn.com/w20/br.png" alt="Selected Language">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+
+  <ul class="language-dropdown-menu" aria-label="Escolher idioma">
+    <li data-path="/pt-pt/index.html" data-flag="https://flagcdn.com/w20/br.png">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português">
+      <span>Português</span>
+    </li>
+    <li data-path="/en/index.html" data-flag="https://flagcdn.com/w20/gb.png">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English">
+      <span>English</span>
+    </li>
+    <li data-path="/fr/index.html" data-flag="https://flagcdn.com/w20/fr.png">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+      <span>Français</span>
+    </li>
+    <li data-path="/de/index.html" data-flag="https://flagcdn.com/w20/de.png">
+      <img src="https://flagcdn.com/w20/de.png" alt="Deutsch">
+      <span>Deutsch</span>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+
+
+</header>
+
+  
+
+  <section class="home">
+    <!-- Vídeos -->
+    <video class="video-slide active" src="../1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../2.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../3.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../4.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../5.mp4" autoplay muted loop></video>
+
+    <!-- Conteúdos -->
+    <div class="content active">
+      <h1>Carte des<br><span>Artistes</span></h1>
+<p>Une vitrine internationale de l'Art et de la Culture</p>
+<a href="#sobre">Soyez Référencé sur la Carte</a>
+</div>
+<div class="content">
+  <h1>Écrivains.<br><span>Art</span></h1>
+  <p>La littérature brésilienne explore une richesse de thèmes, révélant la complexité et la diversité du Brésil.</p>
+  <a href="#sobre">Soyez Référencé sur la Carte</a>
+</div>
+<div class="content">
+  <h1>Musiciens.<br><span>Art</span></h1>
+  <p>Grâce à l'inspiration et à la créativité, ils donnent vie aux cultures, aux histoires et aux rêves à travers la musique.</p>
+  <a href="#sobre">Soyez Référencé sur la Carte</a>
+</div>
+<div class="content">
+  <h1>Acteurs.<br><span>Art</span></h1>
+  <p>Des artistes qui nous transportent dans des mondes fascinants grâce à leur jeu et à leur créativité.</p>
+  <a href="#sobre">Soyez Référencé sur la Carte</a>
+</div>
+<div class="content">
+  <h1>Artistes de Cirque.<br><span>Art</span></h1>
+  <p>Ils transforment talents et créativité en spectacles qui émerveillent tous les âges.</p>
+  <a href="#sobre">Soyez Référencé sur la Carte</a>
+</div>
+
+    </div>
+
+    <!-- Ícones de Mídia Social -->
+    <div class="media-icons">
+      <a href="https://www.instagram.com/mapadosartistas?igsh=MWZ5c3UzOTUzejdiOA=="><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Navegação do Slider -->
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2><mark>Bienvenue sur la Carte des Artistes !</mark></h2>
+<br>
+<p>
+  La <strong>Carte des Artistes</strong> est un espace numérique innovant en cours de création pour rassembler des artistes des quatre coins du Brésil et du monde en un seul lieu. Notre objectif est de servir de pont entre les talents créatifs et les recruteurs, en facilitant les connexions, en favorisant les collaborations et en élargissant les opportunités de travail dans l’univers artistique.
+</p>
+<img src="../img.png" alt="Image représentative" style="width: 100%; height: auto; margin: 20px 0;">
+
+<h2><mark>Que proposons-nous ?</mark></h2>
+<p>
+  <br>
+  Sur notre site, les artistes de divers domaines – tels que musiciens, acteurs, danseurs, écrivains, artistes visuels, artistes de cirque, entre autres – peuvent créer un profil complet mettant en valeur leurs expériences, qualifications, œuvres précédentes et réalisations.
+</p>
+<img src="../img2.png" alt="Image illustrant des artistes" style="width: 100%; height: auto; margin: 20px 0;">
+
+<p>
+  Apparaissez dans un véritable catalogue de talents. Grâce à des filtres avancés, vous pourrez être trouvé pour collaborer à des projets ou participer à des événements de manière simple et pratique.
+</p>
+<br>
+<h2><mark>Pourquoi dois-je m’inscrire maintenant ?</mark></h2>
+<br>
+<ul>
+  <li><strong>Visibilité Mondiale :</strong> Montrez votre talent au monde entier et atteignez de nouveaux publics.</li>
+  <li><strong>Communauté exclusive :</strong> Un grand échange d’expériences entre artistes et professionnels du secteur.</li>
+  <li><strong>CV détaillés :</strong> Une page avec des informations complètes, incluant portfolio, qualifications et expériences.</li>
+  <li><strong>Connexion facilitée :</strong> Nous simplifions le contact entre artistes et recruteurs, créant un environnement sûr et fiable pour les partenariats.</li>
+  <li><strong>Diversité et inclusion :</strong> Nous célébrons la richesse culturelle, en connectant des talents de différents styles, cultures et régions.</li>
+  <li><strong>Accès privilégié :</strong> Espace membre, forum d’artistes et contenus sélectionnés.</li>
+  <li><strong>Réseautage :</strong> Développez votre activité et augmentez vos revenus grâce à des collaborations entre artistes pour étendre la portée de votre art !</li>
+</ul>
+<br>
+<br>
+<h2><mark>C’est tout ce qu’il faut pour apparaître sur la Carte ???</mark></h2>
+
+
+    <img src="../img33.jpeg" alt="Imagem mostrando diversidade artística" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p><strong>Explorez. Connectez-vous. Créez.</strong><br>
+   Sur la Carte des Artistes, le monde de l'art rencontre le monde des opportunités !</p>
+
+<!-- Ajout de la Carte -->
+<h3><mark>Explorez la Carte des Artistes</mark></h3>
+<a href="#inscricao" class="btn-outline"> Réservez votre <mark>PIN</mark> maintenant</a>
+<p>Déplacez la carte pour explorer les talents du monde entier.</p>
+
+    <div id="map" style="height: 400px;"></div>
+</section>
+
+<div style="text-align: center; margin-top: 20px;">
+  <h2><mark>
+    </mark></h2>
+  <p id="contador" style="font-size: 2em; font-weight: bold; color: #030303;"></p>
+</div>
+<!-- Seção de Inscrição e Pagamento -->
+<section id="inscricao" class="signup"> 
+  <h2><mark>Effectuez le paiement pour garantir votre place !</mark></h2>
+<br>
+<p>Remplissez le formulaire ci-dessous pour vous inscrire et choisir le plan qui correspond le mieux à vos besoins. Nous vous contacterons !</p>
+
+  <br><br><br>
+  <form id="formInscricao" action="https://formspree.io/f/xovjqpwg" method="POST" style="max-width: 600px; margin: auto;">
+      
+      <label for="nome">Nom complet:</label>
+      <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="telefone">Téléphone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="xxxxxxxxxxx" pattern="^[0-9]{11}$" style="width: 100%; padding: 10px; margin: 10px 0;">
+
+
+      <form id="formInscricao">
+        <label for="especializacao">Área:</label>
+        <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Sélectionnez votre spécialité</option>
+          <option value="pintor">Artiste Plasticien</option>
+          <option value="escritor">Écrivain</option>
+          <option value="dancarino">Danseur</option>
+          <option value="circense">Artiste de Cirque</option>
+          <option value="musico">Musicien</option>
+          <option value="malabarista">Jongleur</option>
+          <option value="outros">Autres</option>
+
+        </select>
+      
+        <label for="plano">Sélectionnez votre forfait :</label>
+<select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
+  <option value="">Choisissez un forfait</option>
+  <option value="plano1">Abonnement mensuel - € 29,99 par mois (minimum 1 an)</option>
+  <option value="plano3">Abonnement annuel - € 119,88 (1 an)</option>
+</select>
+
+        </select>
+      
+        <button type="submit" class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+          Enviar
+        </button>
+      </form>
+      
+      <script>
+        document.getElementById('formInscricao').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const formData = new FormData(this);
+      
+          fetch('https://formspree.io/f/xgvaplgv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json',
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              const planoSelecionado = document.getElementById('plano').value;
+      
+              let linkPagamento = '';
+      
+              if (planoSelecionado === 'plano1') {
+                linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
+              } else if (planoSelecionado === 'plano3') {
+                linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
+              }
+      
+              if (linkPagamento) {
+                alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
+                window.location.href = linkPagamento;
+              } else {
+                alert('Erro ao selecionar o plano. Por favor, tente novamente.');
+              }
+            } else {
+              alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            }
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          });
+        });
+      </script>
+      
+
+</section>
+
+
+</section>
+
+
+<!-- Seção Faça Parte -->
+<section id="faca-parte" class="join">
+  <h2><mark>Lancement International</mark></h2>
+<p>Rejoignez-nous et transformez vos idées en résultats concrets. Cliquez sur le bouton ci-dessous pour commencer !</p>
+<img src="../img4.png" alt="Image inspirante pour participation" style="width: 100%; height: auto; margin: 20px 0;">
+<a href="#inscricao" class="btn">PARTICIPEZ MAINTENANT</a>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>© 2025 Mapa dos Artistas - Todos os direitos reservados.</p>
+</footer>
+
+<script src="../script.js"></script>

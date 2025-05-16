@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map of Artists</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Link para o CSS do Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Link para o JavaScript do Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+ <header>
+  <a href="#" class="brand">Map of Artists</a>
+  <div class="menu-btn"></div>
+  
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="#home">Início</a>  
+      <a href="#sobre">Sobre</a>  
+      <a href="#faca-parte">Faça parte</a>  
+      <a href="Area de login/index.html">Login</a>  
+    </div>   
+  </div>
+<!-- Dropdown de idiomas -->
+<div class="language-dropdown">
+  <button id="languageBtn" aria-haspopup="true" aria-expanded="false">
+    <img src="https://flagcdn.com/w20/br.png" alt="Português">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+
+  <ul class="language-dropdown-menu" aria-label="Escolher idioma">
+    <li onclick="changeLanguage('/pt-pt/index.html')">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português">
+      <span>Português</span>
+    </li>
+    <li onclick="changeLanguage('/en/index.html')">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English">
+      <span>English</span>
+    </li>
+    <li onclick="changeLanguage('/fr/index.html')">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+      <span>Français</span>
+    </li>
+    <li onclick="changeLanguage('/de/index.html')">
+      <img src="https://flagcdn.com/w20/de.png" alt="Deutsch">
+      <span>Deutsch</span>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+
+
+</header>
+
+  
+
+  <section class="home">
+    <!-- Vídeos -->
+    <video class="video-slide active" src="../1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../2.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../3.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../4.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../5.mp4" autoplay muted loop></video>
+
+    <!-- Conteúdos -->
+    <div class="content active">
+      <h1>Artists<br><span>Map</span></h1>
+      <p>An international showcase of Art and Culture</p>
+      <a href="#sobre">Get Found on the Map</a>
+    </div>
+    <div class="content">
+      <h1>Writers.<br><span>Art</span></h1>
+      <p>Brazilian literature covers a rich range of themes, exploring the country's complexity and diversity.</p>
+      <a href="#sobre">Get Found on the Map</a>
+    </div>
+    <div class="content">
+      <h1>Musicians.<br><span>Art</span></h1>
+      <p>With inspiration and creativity, they bring cultures, stories, and dreams to life through music.</p>
+      <a href="#sobre">Get Found on the Map</a>
+    </div>
+    <div class="content">
+      <h1>Actors.<br><span>Art</span></h1>
+      <p>Artists who transport us to incredible worlds through their performance and creativity.</p>
+      <a href="#sobre">Get Found on the Map</a>
+    </div>
+    <div class="content">
+      <h1>Circus Artists.<br><span>Art</span></h1>
+      <p>Turning skill and creativity into shows that enchant all ages.</p>
+      <a href="#sobre">Get Found on the Map</a>
+    </div>
+
+    <!-- Ícones de Mídia Social -->
+    <div class="media-icons">
+      <a href="https://www.instagram.com/mapadosartistas?igsh=MWZ5c3UzOTUzejdiOA=="><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Navegação do Slider -->
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2><mark>Welcome to the Artists Map!</mark></h2>
+    <br>
+    <p>
+      O <strong>Artists Map</strong> is an innovative digital space created to bring together artists from all corners of Brazil and the world in one place. Our goal is to be the bridge between creative talents and clients, facilitating connections, promoting collaborations, and expanding job opportunities in the artistic universe.
+    </p>
+    <img src="../img.png" alt="Imagem representativa" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <h2><mark>What do we offer?</mark></h2>
+    <p>
+      <br>
+      On our platform, artists from various fields – such as musicians, actors, dancers, writers, visual artists, circus performers, and others – can create a complete profile that highlights their experiences, qualifications, previous work, and achievements.
+    </p>
+    <img src="../img2.png" alt="Imagem ilustrativa de artistas" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p>
+       Be featured in a true talent catalog. With advanced filters, you can be found to develop projects or participate in events in a simple and practical way.
+    </p>
+    <br>
+    <h2><mark>Why should I join now?</mark></h2>
+    <br>
+    <ul>
+    <li><strong>Global Visibility:</strong> Showcase your talent to the world and reach new audiences.</li>
+    <li><strong>Exclusive Community:</strong> A rich exchange of experiences among artists and professionals in the field.</li>
+    <li><strong>Detailed Profiles:</strong> Have a personal page with complete information, including portfolio, qualifications, and experiences.</li>
+    <li><strong>Easy Connection:</strong> We simplify the contact between artists and clients, creating a safe and reliable environment for partnerships.</li>
+    <li><strong>Diversity and Inclusion:</strong> We celebrate cultural richness by connecting talents of different styles, cultures, and regions.</li>
+    <li><strong>Privileged Access:</strong> Members-only area, artists' forum, and curated content.</li>
+    <li><strong>Networking:</strong> Do business and increase your income by collaborating with other artists to expand the reach of your art!</li>
+  </ul>
+    <br>
+    <br>
+    <h2><mark>Is That All It Takes to Appear on the Map???</mark></h2>
+
+    <img src="../img33.jpeg" alt="Imagem mostrando diversidade artística" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p><strong>Explore. Connect. Create.</strong><br>
+        On the Artists Map, the world of art meets the world of opportunities!</p>
+
+    <!-- Adicionando o Mapa -->
+    <h3><mark>Explore the Artists Map</mark></h3>
+    <a href="#inscricao" class="btn-outline"> Reserve seu <mark>PIN</mark> agora</a>
+    <p>Move the map around to explore talents across the world.</p>
+    <div id="map" style="height: 400px;"></div>
+</section>
+
+<div style="text-align: center; margin-top: 20px;">
+  <h2><mark>
+    </mark></h2>
+  <p id="contador" style="font-size: 2em; font-weight: bold; color: #030303;"></p>
+</div>
+<!-- Seção de Inscrição e Pagamento -->
+<section id="inscricao" class="signup"> 
+  <h2><mark>Make the Payment to Secure Your Spot!</mark></h2>
+  <br>
+  <p>Fill out the form below to register and choose the plan that best suits your needs. We will contact you soon!</p>
+  <br><br><br>
+  <form id="formInscricao" action="https://formspree.io/f/xovjqpwg" method="POST" style="max-width: 600px; margin: auto;">
+      
+      <label for="nome">Full Name:</label>
+      <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="telefone">Phone Number::</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="xxxxxxxxxxx" pattern="^[0-9]{11}$" style="width: 100%; padding: 10px; margin: 10px 0;">
+
+
+      <form id="formInscricao">
+        <label for="especializacao">Field:</label>
+        <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Select your specialization</option>
+          <option value="pintor">Visual Artist</option>
+          <option value="escritor">Writer</option>
+          <option value="dancarino">Dancer</option>
+          <option value="circense">Circus Artist</option>
+          <option value="musico">Musician</option>
+          <option value="malabarista">Juggler</option>
+          <option value="outros">Others</option>
+        </select>
+      
+        <label for="plano">Select Your Plan:</label>
+        <select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Choose a plan</option>
+          <option value="plano1">Monthly Subscription – R$ 29.99/month (minimum 1 year)</option>
+          <option value="plano3">Annual Plan – R$ 119.88 (1 Year)</option>
+        </select>
+      
+        <button type="submit" class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+          Enviar
+        </button>
+      </form>
+      
+      <script>
+        document.getElementById('formInscricao').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const formData = new FormData(this);
+      
+          fetch('https://formspree.io/f/xgvaplgv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json',
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              const planoSelecionado = document.getElementById('plano').value;
+      
+              let linkPagamento = '';
+      
+              if (planoSelecionado === 'plano1') {
+                linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
+              } else if (planoSelecionado === 'plano3') {
+                linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
+              }
+      
+              if (linkPagamento) {
+                alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
+                window.location.href = linkPagamento;
+              } else {
+                alert('Erro ao selecionar o plano. Por favor, tente novamente.');
+              }
+            } else {
+              alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            }
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          });
+        });
+      </script>
+      
+
+</section>
+
+
+</section>
+
+
+<!-- Seção Faça Parte -->
+<section id="faca-parte" class="join">
+  <h2><mark>International Launch</mark></h2>
+  <p>Join us and turn your ideas into real results. Click the button below to get started!</p>
+  <img src="../img4.png" alt="Imagem inspiradora para participação" style="width: 100%; height: auto; margin: 20px 0;">
+  <a href="#inscricao" class="btn">JOIN NOW</a>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>© 2025 Artists Map – All rights reserved.</p>
+</footer>
+
+<script src="../script.js"></script>

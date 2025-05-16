@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa dos Artistas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Link para o CSS do Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Link para o JavaScript do Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+ <header>
+  <a href="#" class="brand">Mapa dos Artistas</a>
+  <div class="menu-btn"></div>
+  
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="#home">Início</a>  
+      <a href="#sobre">Sobre</a>  
+      <a href="#faca-parte">Faça parte</a>  
+      <a href="Area de login/index.html">Login</a>  
+    </div>   
+  </div>
+<!-- Dropdown de idiomas -->
+<div class="language-dropdown">
+  <button id="languageBtn" aria-haspopup="true" aria-expanded="false">
+    <img id="selected-flag" src="https://flagcdn.com/w20/br.png" alt="Selected Language">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+
+  <ul class="language-dropdown-menu" aria-label="Escolher idioma">
+    <li data-path="/pt-pt/index.html" data-flag="https://flagcdn.com/w20/br.png">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português">
+      <span>Português</span>
+    </li>
+    <li data-path="/en/index.html" data-flag="https://flagcdn.com/w20/gb.png">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English">
+      <span>English</span>
+    </li>
+    <li data-path="/fr/index.html" data-flag="https://flagcdn.com/w20/fr.png">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+      <span>Français</span>
+    </li>
+    <li data-path="/de/index.html" data-flag="https://flagcdn.com/w20/de.png">
+      <img src="https://flagcdn.com/w20/de.png" alt="Deutsch">
+      <span>Deutsch</span>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+
+
+</header>
+
+  
+
+  <section class="home">
+    <!-- Vídeos -->
+    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+
+    <!-- Conteúdos -->
+    <div class="content active">
+      <h1>Mapa dos<br><span>Artistas</span></h1>
+      <p>Uma vitrine internacional de Arte e Cultura</p>
+      <a href="#sobre">Seja Encontrado no Mapa</a>
+    </div>
+    <div class="content">
+      <h1>Escritores.<br><span>Art</span></h1>
+      <p>A literatura brasileira abrange uma riqueza de temas, explorando a complexidade e diversidade do Brasil.</p>
+      <a href="#sobre">Seja Encontrado no Mapa</a>
+    </div>
+    <div class="content">
+      <h1>Músicos.<br><span>Art</span></h1>
+      <p>Com inspiração e criatividade, eles dão vida a culturas, histórias e sonhos através da música.</p>
+      <a href="#sobre">Seja Encontrado no Mapa</a>
+    </div>
+    <div class="content">
+      <h1>Atores.<br><span>Art</span></h1>
+      <p>Artistas que nos transportam para mundos incríveis por meio da sua atuação e criatividade.</p>
+      <a href="#sobre">Seja Encontrado no Mapa</a>
+    </div>
+    <div class="content">
+      <h1>Circenses.<br><span>Art</span></h1>
+      <p>Transformando habilidades e criatividade em espetáculos que encantam todas as idades.</p>
+      <a href="#sobre">Seja Encontrado no Mapa</a>
+    </div>
+
+    <!-- Ícones de Mídia Social -->
+    <div class="media-icons">
+      <a href="https://www.instagram.com/mapadosartistas?igsh=MWZ5c3UzOTUzejdiOA=="><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Navegação do Slider -->
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2><mark>Bem-vindo ao Mapa dos Artistas!</mark></h2>
+    <br>
+    <p>
+      O <strong>Mapa dos Artistas</strong> é um espaço digital inovador que está sendo criado para reunir artistas de todos os cantos do Brasil e do mundo em um só lugar. Nosso objetivo é ser a ponte entre talentos criativos e contratantes, facilitando conexões, promovendo colaborações e ampliando as possibilidades de trabalho no universo artístico.
+    </p>
+    <img src="img.png" alt="Imagem representativa" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <h2><mark>O que oferecemos?</mark></h2>
+    <p>
+      <br>
+      No nosso site, artistas de diversas áreas – como músicos, atores, dançarinos, escritores, artistas visuais, circenses, entre outros – podem criar um perfil completo que destaca suas experiências, qualificações, trabalhos anteriores e conquistas.
+    </p>
+    <img src="img2.png" alt="Imagem ilustrativa de artistas" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p>
+      Apareça em um verdadeiro catálogo de talentos. Com filtros avançados, você poderá ser encontrado para desenvolver projetos ou participar de eventos de forma simples e prática.
+    </p>
+    <br>
+    <h2><mark>Por que eu preciso participar Agora?</mark></h2>
+    <br>
+    <ul>
+      <li><strong>Visibilidade Global:</strong> Mostre seu talento para o mundo e alcance novos públicos.</li>
+      <li><strong>Comunidade exclusiva:</strong> Uma grande troca de experiências entre artistas e profissionais da área.</li>
+      <li><strong>Currículos Detalhados:</strong> Tenha uma página com informações completas, incluindo portfólio, qualificações e experiências.</li>
+      <li><strong>Conexão Facilitada:</strong> Simplificamos o contato entre artistas e contratantes, criando um ambiente seguro e confiável para parcerias.</li>
+      <li><strong>Diversidade e Inclusão:</strong> Celebramos a riqueza cultural, conectando talentos de diferentes estilos, culturas e regiões.</li>
+      <li><strong>Acesso Privilegiado:</strong> Área de membros, fórum de artistas e conteúdos selecionados.</li>
+      <li><strong>Networking:</strong> Faça negócios e aumente sua renda, criando collabs entre artistas para expandir o alcance da sua arte!</li>
+    </ul>
+    <br>
+    <br>
+    <h2><mark>Só isso para aparecer no Mapa???</mark></h2>
+
+    <img src="img33.jpeg" alt="Imagem mostrando diversidade artística" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p><strong>Explore. Conecte-se. Crie.</strong><br>
+       No Mapa dos Artistas, o mundo da arte se encontra com o mundo das oportunidades!</p>
+
+    <!-- Adicionando o Mapa -->
+    <h3><mark>Explore o Mapa dos Artistas</mark></h3>
+    <a href="#inscricao" class="btn-outline"> Reserve seu <mark>PIN</mark> agora</a>
+    <p>Movimente o mapa para explorar os talentos ao redor do mundo.</p>
+    <div id="map" style="height: 400px;"></div>
+</section>
+
+<div style="text-align: center; margin-top: 20px;">
+  <h2><mark>
+    </mark></h2>
+  <p id="contador" style="font-size: 2em; font-weight: bold; color: #030303;"></p>
+</div>
+<!-- Seção de Inscrição e Pagamento -->
+<section id="inscricao" class="signup"> 
+  <h2><mark>Faça o pagamento para garantir sua vaga!</mark></h2>
+  <br>
+  <p>Preencha o formulário abaixo para se inscrever e escolher o plano que melhor atende às suas necessidades. Entraremos em contato!</p>
+  <br><br><br>
+  <form id="formInscricao" action="https://formspree.io/f/xovjqpwg" method="POST" style="max-width: 600px; margin: auto;">
+      
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="xxxxxxxxxxx" pattern="^[0-9]{11}$" style="width: 100%; padding: 10px; margin: 10px 0;">
+
+
+      <form id="formInscricao">
+        <label for="especializacao">Área:</label>
+        <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Selecione a especialização</option>
+          <option value="pintor">Artista Plástico</option>
+          <option value="escritor">Escritor</option>
+          <option value="dancarino">Dançarino</option>
+          <option value="circense">Circense</option>
+          <option value="musico">Músico</option>
+          <option value="malabarista">Malabarista</option>
+          <option value="outros">Outros</option>
+        </select>
+      
+        <label for="plano">Selecione seu Plano:</label>
+        <select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Escolha um plano</option>
+          <option value="plano1">Assinatura mensal - R$ 29,99 por mês (mínimo 1 ano) </option>
+          <option value="plano3">Anuidade - R$ 119,88 (1 Ano)</option>
+        </select>
+      
+        <button type="submit" class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+          Enviar
+        </button>
+      </form>
+      
+      <script>
+        document.getElementById('formInscricao').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const formData = new FormData(this);
+      
+          fetch('https://formspree.io/f/xgvaplgv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json',
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              const planoSelecionado = document.getElementById('plano').value;
+      
+              let linkPagamento = '';
+      
+              if (planoSelecionado === 'plano1') {
+                linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
+              } else if (planoSelecionado === 'plano3') {
+                linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
+              }
+      
+              if (linkPagamento) {
+                alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
+                window.location.href = linkPagamento;
+              } else {
+                alert('Erro ao selecionar o plano. Por favor, tente novamente.');
+              }
+            } else {
+              alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            }
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          });
+        });
+      </script>
+      
+
+</section>
+
+
+</section>
+
+
+<!-- Seção Faça Parte -->
+<section id="faca-parte" class="join">
+  <h2><mark>Lançamento Internacional</mark></h2>
+  <p>Junte-se a nós e transforme suas ideias em resultados reais. Clique no botão abaixo para começar!</p>
+  <img src="img4.png" alt="Imagem inspiradora para participação" style="width: 100%; height: auto; margin: 20px 0;">
+  <a href="#inscricao" class="btn">FAÇA PARTE AGORA</a>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>© 2025 Mapa dos Artistas - Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>

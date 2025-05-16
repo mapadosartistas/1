@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karte der Künstler</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Link para o CSS do Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Link para o JavaScript do Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">Karte der Künstler</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+    <div class="navigation-items">
+    <a href="#home">Startseite</a>  
+    <a href="#sobre">Über uns</a>  
+    <a href="#faca-parte">Mitmachen</a>  
+
+        <a href="Area de login/index.html"></a>  
+      </div>   
+    </div>
+    <!-- Dropdown de idiomas -->
+<div class="language-dropdown">
+  <button id="languageBtn" aria-haspopup="true" aria-expanded="false">
+    <img id="selected-flag" src="https://flagcdn.com/w20/br.png" alt="Selected Language">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+
+  <ul class="language-dropdown-menu" aria-label="Escolher idioma">
+    <li data-path="/pt-pt/index.html" data-flag="https://flagcdn.com/w20/br.png">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português">
+      <span>Português</span>
+    </li>
+    <li data-path="/en/index.html" data-flag="https://flagcdn.com/w20/gb.png">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English">
+      <span>English</span>
+    </li>
+    <li data-path="/fr/index.html" data-flag="https://flagcdn.com/w20/fr.png">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+      <span>Français</span>
+    </li>
+    <li data-path="/de/index.html" data-flag="https://flagcdn.com/w20/de.png">
+      <img src="https://flagcdn.com/w20/de.png" alt="Deutsch">
+      <span>Deutsch</span>
+    </li>
+  </ul>
+</div>
+
+  </header>
+
+  <section class="home">
+    <!-- Vídeos -->
+    <video class="video-slide active" src="../1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../2.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../3.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../4.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="../5.mp4" autoplay muted loop></video>
+
+    <!-- Conteúdos -->
+<div class="content active">
+  <h1>Karte der<br><span>Künstler</span></h1>
+  <p>Ein internationales Schaufenster für Kunst und Kultur</p>
+  <a href="#sobre">Lass dich auf der Karte finden</a>
+</div>
+
+<div class="content">
+  <h1>Schriftsteller.<br><span>Kunst</span></h1>
+  <p>Die brasilianische Literatur umfasst eine Fülle von Themen und spiegelt die Komplexität und Vielfalt Brasiliens wider.</p>
+  <a href="#sobre">Lass dich auf der Karte finden</a>
+</div>
+
+<div class="content">
+  <h1>Musiker.<br><span>Kunst</span></h1>
+  <p>Mit Inspiration und Kreativität erwecken sie Kulturen, Geschichten und Träume durch Musik zum Leben.</p>
+  <a href="#sobre">Lass dich auf der Karte finden</a>
+</div>
+
+<div class="content">
+  <h1>Schauspieler.<br><span>Kunst</span></h1>
+  <p>Künstler, die uns durch ihre Darstellung und Kreativität in fantastische Welten entführen.</p>
+  <a href="#sobre">Lass dich auf der Karte finden</a>
+</div>
+
+<div class="content">
+  <h1>Zirkuskünstler.<br><span>Kunst</span></h1>
+  <p>Sie verwandeln Geschicklichkeit und Kreativität in Shows, die Menschen jeden Alters begeistern.</p>
+  <a href="#sobre">Lass dich auf der Karte finden</a>
+</div>
+
+
+    <!-- Ícones de Mídia Social -->
+    <div class="media-icons">
+      <a href="https://www.instagram.com/mapadosartistas?igsh=MWZ5c3UzOTUzejdiOA=="><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Navegação do Slider -->
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2><mark>Willkommen bei der Karte der Künstler!</mark></h2>
+      <br>
+      <p>
+        Die <strong>Karte der Künstler</strong> ist ein innovativer digitaler Raum, der geschaffen wurde, um Künstler aus allen Ecken Brasiliens und der Welt an einem Ort zu vereinen. Unser Ziel ist es, eine Brücke zwischen kreativen Talenten und Auftraggebern zu schlagen, Verbindungen zu erleichtern, Kooperationen zu fördern und die beruflichen Möglichkeiten in der Kunstwelt zu erweitern.
+      </p>
+      <img src="../img.png" alt="Repräsentatives Bild" style="width: 100%; height: auto; margin: 20px 0;">
+
+      <h2><mark>Was bieten wir an?</mark></h2>
+      <p>
+        <br>
+        Auf unserer Website können Künstler aus verschiedenen Bereichen – wie Musiker, Schauspieler, Tänzer, Schriftsteller, bildende Künstler, Zirkuskünstler und viele andere – ein vollständiges Profil erstellen, das ihre Erfahrungen, Qualifikationen, bisherigen Arbeiten und Erfolge hervorhebt.
+      </p>
+      <img src="../img2.png" alt="Illustratives Bild von Künstlern" style="width: 100%; height: auto; margin: 20px 0;">
+
+      <p>
+        Tauche ein in ein echtes Talentverzeichnis. Mit erweiterten Filtern kannst du ganz einfach gefunden werden, um an Projekten teilzunehmen oder bei Veranstaltungen mitzuwirken.
+      </p>
+      <br>
+      <h2><mark>Warum sollte ich jetzt mitmachen?</mark></h2>
+      <br>
+      <ul>
+        <li><strong>Globale Sichtbarkeit:</strong> Zeige dein Talent der Welt und erreiche ein neues Publikum.</li>
+        <li><strong>Exklusive Community:</strong> Ein intensiver Austausch zwischen Künstlern und Fachleuten der Branche.</li>
+        <li><strong>Detaillierte Profile:</strong> Eine eigene Seite mit vollständigen Informationen, einschließlich Portfolio, Qualifikationen und Erfahrungen.</li>
+        <li><strong>Erleichterte Vernetzung:</strong> Wir vereinfachen den Kontakt zwischen Künstlern und Auftraggebern und schaffen eine sichere und vertrauenswürdige Umgebung für Partnerschaften.</li>
+        <li><strong>Vielfalt und Inklusion:</strong> Wir feiern kulturellen Reichtum, indem wir Talente aus verschiedenen Stilen, Kulturen und Regionen verbinden.</li>
+        <li><strong>Privilegierter Zugang:</strong> Mitgliederbereich, Künstlerforum und ausgewählte Inhalte.</li>
+        <li><strong>Networking:</strong> Knüpfe Geschäftskontakte und steigere dein Einkommen durch kreative Kooperationen mit anderen Künstlern!</li>
+      </ul>
+
+    <br>
+    <br>
+    <h2><mark>Ist das alles, um auf der Karte zu erscheinen???</mark></h2>
+
+    <img src="../img33.jpeg" alt="Imagem mostrando diversidade artística" style="width: 100%; height: auto; margin: 20px 0;">
+
+    <p><strong>Entdecken. Vernetzen. Kreieren.</strong><br>
+    Auf der Karte der Künstler trifft die Welt der Kunst auf die Welt der Möglichkeiten!</p>
+
+      <!-- Karte hinzufügen -->
+      <h3><mark>Entdecke die Karte der Künstler</mark></h3>
+      <a href="#inscricao" class="btn-outline"> Reserviere jetzt deinen <mark>PIN</mark></a>
+      <p>Bewege die Karte, um Talente auf der ganzen Welt zu entdecken.</p>
+      <div id="map" style="height: 400px;"></div>
+      </section>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <h2><mark>
+          </mark></h2>
+        <p id="contador" style="font-size: 2em; font-weight: bold; color: #030303;"></p>
+      </div>
+
+      <!-- Anmelde- und Zahlungsbereich -->
+      <section id="inscricao" class="signup"> 
+        <h2><mark>Leiste die Zahlung, um dir deinen Platz zu sichern!</mark></h2>
+        <br>
+        <p>Fülle das folgende Formular aus, um dich anzumelden und das für dich passende Paket auszuwählen. Wir melden uns bei dir!</p>
+        <br><br><br>
+
+  <form id="formInscricao" action="https://formspree.io/f/xovjqpwg" method="POST" style="max-width: 600px; margin: auto;">
+      
+      <label for="nome">Vollständiger Name:</label>
+      <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="email">E-Mail-Adresse:</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+
+      <label for="telefone"> Telefonnummer:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="xxxxxxxxxxx" pattern="^[0-9]{11}$" style="width: 100%; padding: 10px; margin: 10px 0;">
+
+
+      <form id="formInscricao">
+        <label for="especializacao">Área:</label>
+        <select id="especializacao" name="especializacao" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Wähle eine Spezialisierung</option>
+          <option value="pintor">Bildender Künstler</option>
+          <option value="escritor">Schriftsteller</option>
+          <option value="dancarino">Tänzer</option>
+          <option value="circense">Zirkuskünstler</option>
+          <option value="musico">Musiker</option>
+          <option value="malabarista">Jongleur</option>
+          <option value="outros">Andere</option>
+        </select>
+
+        <label for="plano">Wähle dein Paket:</label>
+        <select id="plano" name="plano" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <option value="">Wähle ein Paket</option>
+          <option value="plano1">Monatliches Abo – € 29,99 pro Monat (Mindestlaufzeit 1 Jahr)</option>
+          <option value="plano3">Jahrespaket – € 119,88 (1 Jahr)</option>
+        </select>
+
+      
+        <button type="submit" class="enviar-btn" style="padding: 10px 20px; margin: 20px 0; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+          Enviar
+        </button>
+      </form>
+      
+      <script>
+        document.getElementById('formInscricao').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const formData = new FormData(this);
+      
+          fetch('https://formspree.io/f/xgvaplgv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json',
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              const planoSelecionado = document.getElementById('plano').value;
+      
+              let linkPagamento = '';
+      
+              if (planoSelecionado === 'plano1') {
+                linkPagamento = 'https://www.asaas.com/c/511rf75ky7t8m2tc';
+              } else if (planoSelecionado === 'plano3') {
+                linkPagamento = 'https://pay.infinitepay.io/galeriadesignart/VC1D-6oAFei7rP-119%2C88';
+              }
+      
+              if (linkPagamento) {
+                alert('Inscrição enviada com sucesso! Você será redirecionado para o pagamento.');
+                window.location.href = linkPagamento;
+              } else {
+                alert('Erro ao selecionar o plano. Por favor, tente novamente.');
+              }
+            } else {
+              alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            }
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          });
+        });
+      </script>
+      
+
+</section>
+
+
+</section>
+
+
+<!-- Seção Faça Parte -->
+<section id="faca-parte" class="join">
+  <h2><mark>Internationaler Start</mark></h2>
+<p>Schließe dich uns an und verwandle deine Ideen in echte Ergebnisse. Klicke auf den Button unten, um loszulegen!</p>
+<img src="../img4.png" alt="Inspirierendes Bild zur Teilnahme" style="width: 100%; height: auto; margin: 20px 0;">
+<a href="#inscricao" class="btn">JETZT MITMACHEN</a>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>© 2025 Mapa dos Artistas - Todos os direitos reservados.</p>
+</footer>
+
+<script src="../script.js"></script>
