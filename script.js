@@ -105,3 +105,12 @@ if (languageBtn && menu && selectedFlag) {
     });
   });
 }
+
+  document.querySelectorAll('.language-dropdown-menu li').forEach(item => {
+    item.addEventListener('click', () => {
+      const path = item.getAttribute('data-path');
+      if (path) {
+        window.location.href = path;
+      }
+    });
+  });
